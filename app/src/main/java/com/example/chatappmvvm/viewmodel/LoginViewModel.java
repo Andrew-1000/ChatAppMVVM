@@ -6,13 +6,14 @@ import androidx.databinding.Bindable;
 
 import com.example.chatappmvvm.BR;
 import com.example.chatappmvvm.utils.MyUtils;
+import com.example.chatappmvvm.view.LoginActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.example.chatappmvvm.interfaces.Observer;
 
 import java.util.ArrayList;
-import java.util.Observer;
 
 public class LoginViewModel extends BaseObservable {
     public boolean isAuthDone;
@@ -70,7 +71,7 @@ public class LoginViewModel extends BaseObservable {
 
     public void addObserver(Observer client) {
         if (!observers.contains( client )) {
-            observers.add( client );
+            observers.add(  client );
         }
     }
 
@@ -80,9 +81,9 @@ public class LoginViewModel extends BaseObservable {
         }
     }
 
-    private void notifyObservers(int showToast, String messageAuthenticationFailed) {
+    private void notifyObservers(int eventType, String message) {
         for (int i = 0; i < observers.size(); i++) {
-            observers.get( i ).onObserve( showToast, messageAuthenticationFailed );
+            observers.get( i ).onObserve( eventType, message );
         }
     }
 }
