@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "199818196836",
+    "firebase_url": "https://andychat-6cd06.firebaseio.com",
+    "project_id": "andychat-6cd06",
+    "storage_bucket": "andychat-6cd06.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:199818196836:android:2e44faf7cc98f693b5ec71",
+        "android_client_info": {
+          "package_name": "com.example.chatappmvvm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "199818196836-ov0797mdkmvj5s1mki2egqdhb0792de5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDru9YduIJkYGkW6wQBIRwGerWkYnko7Xw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "199818196836-ov0797mdkmvj5s1mki2egqdhb0792de5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
