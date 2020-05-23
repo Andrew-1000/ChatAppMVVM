@@ -46,7 +46,7 @@
             android:gravity="center_horizontal">
             <Button
                 android:layout_width="@dimen/small_width"
-                android:layout_height="@dimen/small_height"    VIEW
+                android:layout_height="@dimen/small_height"
                 android:layout_margin="@dimen/margin_extra_large"
                 android:text="@string/create_room_label"
                 android:padding="@dimen/padding_small"
