@@ -1,9 +1,57 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".view.ChatActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.chatappmvvm.viewmodel.ChatViewModel" />
+        <variable
+            name="activity"
+            type="com.example.chatappmvvm.view.ChatActivity" />
+        <import type="android.view.View"/>
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/standard_small"
+            android:text="@string/chats_heading"
+            style="@style/activity_headers"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:padding="@dimen/padding_small"
+                android:layout_height="match_parent"
+                android:id="@+id/recycler_view"
+                android:layout_above="@+id/layout_input">
+
+            </androidx.recyclerview.widget.RecyclerView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/small_height"
+                android:id="@+id/layout_input"
+                android:orientation="horizontal"
+                android:layout_alignParentBottom="true"
+                style="@style/regular_layouts">
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:hint="@string/hint_typing"
+                    android:id="@+id/edittext_chat_message"
+                    style="@style/regular_text"
+                    android:layout_marginEnd="@dimen/margin_average" />
+                <Button
+                    android:layout_width="@dimen/small_width"
+                    android:layout_height="match_parent"
+                    android:text="@string/send_text"
+                    android:onClick="@{() -> activity.sendMessage()}"
+                    style="@style/regular_buttons"/>
+
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

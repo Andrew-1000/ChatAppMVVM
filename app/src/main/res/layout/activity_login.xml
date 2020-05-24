@@ -1,11 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".view.LoginActivity">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
         <variable
@@ -19,17 +13,17 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <Button
-            android:layout_width="@dimen/long_width"
-            android:layout_height="@dimen/long_height"
-            android:layout_marginTop="@dimen/margin_extra_large"
-            android:layout_centerHorizontal="true"
-            android:padding="@dimen/padding_average"
             style="@style/regular_buttons"
-            android:text="@{viewModel.authInProgress ? @string/text_waiting_for_auth : @string/authentication_label}"
+            android:layout_width="305dp"
+            android:layout_height="73dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_extra_large"
             android:onClick="@{() -> viewModel.firebaseAnonymousAuth()}"
-            android:visibility="@{viewModel.isAuthDone ? View.GONE : View.VISIBLE}"
-            />
+            android:padding="@dimen/padding_average"
+            android:text="@{viewModel.authInProgress ? @string/text_waiting_for_auth : @string/authentication_label}"
+            android:visibility="@{viewModel.isAuthDone ? View.GONE : View.VISIBLE}" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="@dimen/small_height"
@@ -44,24 +38,26 @@
             android:layout_height="@dimen/long_height"
             android:layout_alignParentBottom="true"
             android:gravity="center_horizontal">
+
             <Button
-                android:layout_width="@dimen/small_width"
-                android:layout_height="@dimen/small_height"
+                style="@style/regular_buttons"
+                android:layout_width="144dp"
+                android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_extra_large"
+                android:onClick="@{() -> activity.showRoomDialog()}"
+                android:padding="@dimen/padding_small"
                 android:text="@string/create_room_label"
-                android:padding="@dimen/padding_small"
-                android:onClick="@{() -> activity.showRoomDialog()}"
-                android:visibility="@{viewModel.isAuthDone ? View.VISIBLE : View.GONE}"
-                style="@style/regular_buttons"/>
+                android:visibility="@{viewModel.isAuthDone ? View.VISIBLE : View.GONE}" />
+
             <Button
-                android:layout_width="@dimen/small_width"
-                android:layout_height="@dimen/small_height"
+                style="@style/regular_buttons"
+                android:layout_width="138dp"
+                android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_extra_large"
-                android:text="@string/existing_room_label"
-                android:padding="@dimen/padding_small"
                 android:onClick="@{() -> activity.showRoomDialog()}"
-                android:visibility="@{viewModel.isAuthDone ?  View.VISIBLE : View.GONE}"
-                style="@style/regular_buttons"/>
+                android:padding="@dimen/padding_small"
+                android:text="@string/existing_room_label"
+                android:visibility="@{viewModel.isAuthDone ?  View.VISIBLE : View.GONE}" />
         </LinearLayout>
 
     </RelativeLayout>
