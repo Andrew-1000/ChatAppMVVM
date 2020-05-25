@@ -1,5 +1,5 @@
-
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
             name="viewModel"
@@ -20,6 +20,7 @@
             style="@style/activity_headers"/>
         <RelativeLayout
             android:layout_width="match_parent"
+            android:background="@drawable/chatbg"
             android:layout_height="match_parent">
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
@@ -30,26 +31,57 @@
 
             </androidx.recyclerview.widget.RecyclerView>
             <LinearLayout
+                android:id="@+id/layout_input"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/small_height"
-                android:id="@+id/layout_input"
                 android:orientation="horizontal"
+                android:padding="3dp"
+                android:layout_margin="7dp"
                 android:layout_alignParentBottom="true"
-                style="@style/regular_layouts">
-                <EditText
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                android:background="@drawable/rounded_edittext"
+                android:weightSum="10"
+                style="@style/chat_editText">
+
+                <ImageButton
+                    android:id="@+id/emoji_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:hint="@string/hint_typing"
+                    android:alpha="0.8"
+                    android:background="@drawable/rounded_edittext"
+                    android:padding="10dp"
+                    app:srcCompat="@drawable/ic_insert_emoticon_black_24dp" />
+                <ImageButton
+                    android:id="@+id/chat_add_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:alpha="0.8"
+                    android:background="@android:color/white"
+                    android:padding="10dp"
+                    app:srcCompat="@drawable/ic_attach_file_black_24dp" />
+
+                <EditText
                     android:id="@+id/edittext_chat_message"
-                    style="@style/regular_text"
-                    android:layout_marginEnd="@dimen/margin_average" />
-                <Button
-                    android:layout_width="@dimen/small_width"
-                    android:layout_height="match_parent"
-                    android:text="@string/send_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="8"
+                    android:background="@color/white"
+                    android:ems="10"
+                    android:inputType="textMultiLine"
+                    android:hint="@string/hint_typing"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                     />
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:onClick="@{() -> activity.sendMessage()}"
-                    style="@style/regular_buttons"/>
+                    android:layout_weight="1"
+                    android:alpha="0.8"
+                    android:background="@drawable/rounded_edittext"
+                    android:padding="10dp"
+                    app:srcCompat="@drawable/ic_send_black_24dp"/>
 
             </LinearLayout>
         </RelativeLayout>
