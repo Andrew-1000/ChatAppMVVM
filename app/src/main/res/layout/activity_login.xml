@@ -51,7 +51,7 @@
             style="@style/regular_buttons"
             android:layout_width="204dp"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_extra_large"
+            android:layout_margin="@dimen/margin_small"
             android:onClick="@{() -> activity.showRoomDialog()}"
             android:padding="@dimen/padding_small"
             android:text="@string/existing_room_label"
