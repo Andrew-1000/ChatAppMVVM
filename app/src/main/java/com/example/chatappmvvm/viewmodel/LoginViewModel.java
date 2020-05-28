@@ -6,7 +6,6 @@ import androidx.databinding.Bindable;
 
 import com.example.chatappmvvm.BR;
 import com.example.chatappmvvm.utils.MyUtils;
-import com.example.chatappmvvm.view.LoginActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
