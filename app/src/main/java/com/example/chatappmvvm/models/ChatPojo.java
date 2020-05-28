@@ -19,7 +19,6 @@ public class ChatPojo extends BaseObservable {
     private String message;
     private boolean isMine;
 
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public ChatPojo(DataSnapshot dataSnapshot) {
         HashMap<String, Object> objectHashMap = (HashMap<String, Object>)dataSnapshot.getValue();
         this.messageKey = dataSnapshot.getKey();
@@ -30,7 +29,7 @@ public class ChatPojo extends BaseObservable {
                 .equals( Objects.requireNonNull( FirebaseAuth.getInstance().getCurrentUser() ).getUid() )){
             isMine = true;
         }
-        this.timeStamp = MyUtils.convertTime(Long.parseLong( objectHashMap.get( "time" ).toString() ));
+        this.timeStamp = MyUtils.convertTime(Long.parseLong( Objects.requireNonNull( objectHashMap.get( "time" ) ).toString() ));
 
     }
 
