@@ -6,7 +6,7 @@
     <string name="room_dialog_heading">Enter room name</string>
     <string name="dialog_room_info">Name of room is kind of a token known between you and the other party to allow you into a chatroom</string>
     <string name="text_submit">Submit</string>
-    <string name="success_message_authentication">Authorization successful</string>
+    <string name="success_message_authentication">Welcome</string>
     <string name="chats_heading">Messages</string>
     <string name="hint_room_name">Room name</string>
     <string name="hint_typing">Type Message</string>
