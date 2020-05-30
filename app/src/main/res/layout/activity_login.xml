@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:gravity="center"
-        android:background="@drawable/chatbg"
+        android:background="@drawable/gradient"
         android:layout_height="match_parent">
 
         <Button
@@ -32,7 +32,8 @@
             android:layout_width="wrap_content"
             android:layout_height="@dimen/small_height"
             android:layout_marginTop="@dimen/margin_extra_large"
-            android:textSize="@dimen/average_font_size"
+            android:textColor="@color/white"
+            android:textSize="@dimen/large_font_size"
             android:text="@string/success_message_authentication"
             style="@style/info_textviews"
             android:visibility="@{viewModel.isAuthDone ? View.VISIBLE : View.GONE}"/>
