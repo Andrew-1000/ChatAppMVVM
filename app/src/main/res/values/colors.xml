@@ -5,4 +5,7 @@
     <color name="colorAccent">#036BDA</color>
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
+
+    <color name="colorPurple_A400">#9E99E6</color>
+    <color name="colorPurple_900">#5B2F8F</color>
 </resources>
